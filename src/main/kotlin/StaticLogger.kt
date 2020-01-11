@@ -1,3 +1,4 @@
+@Suppress("UNUSED_PARAMETER", "UseExpressionBody", "MemberVisibilityCanBePrivate")
 class StaticLogger {
     object Instance
     {
@@ -5,4 +6,6 @@ class StaticLogger {
             throw Exception("Not working yet...!")
         }
     }
+
+
 }

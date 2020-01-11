@@ -1,11 +1,16 @@
 import java.util.*
 
 
-open class StringCalcWithTime {
+class StringCalcWithTime {
      fun add(numbers: String): Int {
-         val day = getCurrentDay()
-         //we don't work on sundays
-         if (day == Calendar.SUNDAY) {
+
+         val isWeekEnd = when (Calendar.getInstance().get(Calendar.DAY_OF_WEEK)){
+             Calendar.SUNDAY,
+             Calendar.SATURDAY -> true
+
+             else -> false
+         }
+         if (isWeekEnd){
              return -1
          }
 
@@ -14,11 +19,5 @@ open class StringCalcWithTime {
         }
         return Integer.parseInt(numbers)
     }
-
-    protected open fun getCurrentDay(): Int {
-        return Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
-    }
-
-
 
 }

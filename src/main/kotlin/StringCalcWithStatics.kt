@@ -1,15 +1,13 @@
 
-open class StringCalcWithStatics {
+class StringCalcWithStatics {
      fun add(numbers: String): Int {
         if (numbers.isEmpty()){
-            callLogger("0")
+            StaticLogger.Instance.write("0")
             return 0
         }
-        return Integer.parseInt(numbers)
-    }
+         val parsed  = Integer.parseInt(numbers)
+         StaticLogger.Instance.write(parsed.toString())
 
-    internal open fun callLogger(text:String) {
-        StaticLogger.Instance.write(text)
+         return parsed
     }
-
 }
