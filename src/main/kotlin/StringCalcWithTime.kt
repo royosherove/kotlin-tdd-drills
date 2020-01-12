@@ -1,23 +1,24 @@
+@file:Suppress("DuplicatedCode")
+
 import java.util.*
+import java.util.Calendar.SATURDAY
+import java.util.Calendar.SUNDAY
+import java.util.Calendar.DAY_OF_WEEK
 
 
 class StringCalcWithTime {
-     fun add(numbers: String): Int {
 
-         val isWeekEnd = when (Calendar.getInstance().get(Calendar.DAY_OF_WEEK)){
-             Calendar.SUNDAY,
-             Calendar.SATURDAY -> true
-
-             else -> false
+     fun add(numbers: String): Int? {
+         val isWeekend = when (Calendar.getInstance().get(DAY_OF_WEEK)){
+             SATURDAY, SUNDAY   -> true
+             else               -> false
          }
-         if (isWeekEnd){
-             return -1
+         return when {
+             isWeekend          -> null
+             numbers.isEmpty()  -> 0
+             else               -> Integer.parseInt(numbers)
          }
 
-         if (numbers.isEmpty()){
-            return 0
-        }
-        return Integer.parseInt(numbers)
-    }
+     }
 
 }

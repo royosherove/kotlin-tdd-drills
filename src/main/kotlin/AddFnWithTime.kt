@@ -1,6 +1,7 @@
 @file:Suppress("DuplicatedCode")
 
 import java.util.*
+import java.util.Calendar.*
 
 
 //refactor this function so that there is no dependency on real time
@@ -8,10 +9,8 @@ import java.util.*
 // use a higher order function design to achieve this
 fun add(numbers: String): Int {
 
-    val isWeekEnd = when (Calendar.getInstance().get(Calendar.DAY_OF_WEEK)){
-        Calendar.SUNDAY,
-        Calendar.SATURDAY -> true
-
+    val isWeekEnd = when (getInstance().get(DAY_OF_WEEK)){
+        SATURDAY, SUNDAY -> true
         else -> false
     }
     if (isWeekEnd){
