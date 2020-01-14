@@ -1,3 +1,5 @@
+package extractAndOverride
+
 @Suppress("UNUSED_PARAMETER", "UseExpressionBody", "MemberVisibilityCanBePrivate")
 class StaticLogger {
     object Instance
