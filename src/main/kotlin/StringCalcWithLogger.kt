@@ -1,5 +1,4 @@
-
-class StringCalcWithLogger {
+class StringCalcWithLogger () {
      fun add(numbers: String): Int {
         if (numbers.isEmpty()){
             //TODO 1: write the result to a logger here
